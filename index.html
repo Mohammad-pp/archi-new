@@ -1,774 +1,707 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="fa">
 
 <head>
-	<title>Archi - Free Architecture Portfolio HTML Template</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="format-detection" content="telephone=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="author" content="TemplatesJungle">
-	<meta name="keywords" content="Free HTML Template">
-	<meta name="description" content="Free HTML Template">
+  <title>مهندسین مشاور باغ شهر پارسیان</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="author" content="Baghshahr Parsian Engineers">
+  <meta name="description" content="شرکت مهندسین مشاور باغ شهر پارسیان - ارائه دهنده خدمات جامع عمران، شهرسازی، معماری و محیط‌زیست">
 
-	<link rel="stylesheet" type="text/css" href="icomoon/icomoon.css">
-	<link rel="stylesheet" type="text/css" href="css/vendor.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="icomoon/icomoon.css">
+  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-		rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+
+  <style>
+    /* تنظیمات قالب بندی دو زبانه و حالت شب */
+    body { font-family: 'Vazirmatn', 'Roboto', sans-serif; transition: background-color 0.3s, color 0.3s; }
+    
+    /* Toggle Buttons Container - Centered to avoid overlapping with side menus */
+    .tools-container {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      display: flex;
+      gap: 12px;
+    }
+
+    .tool-btn {
+      background: #f1f1f1;
+      color: #333;
+      border: 1px solid #ccc;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      font-family: inherit;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .tool-btn:hover { background: #e0e0e0; }
+
+    /* Fix for menu overlapping */
+    .nav__block {
+      padding-top: 100px !important;
+    }
+
+    /* Slider RTL Fixes & Arrow Directions */
+    #intro, .main-slider {
+      direction: ltr !important; /* Forces slider calculation to work normally in RTL to prevent blank slides */
+    }
+    body[dir='rtl'] .banner-content {
+      direction: rtl !important;
+      text-align: right !important;
+    }
+    body[dir='ltr'] .banner-content {
+      direction: ltr !important;
+      text-align: left !important;
+    }
+
+    .button-container {
+      display: flex !important;
+      gap: 10px;
+      z-index: 10;
+    }
+    /* Fixed: Right arrow is Next, Left arrow is Prev in both languages */
+    body[dir='rtl'] .button-container {
+      flex-direction: row !important; 
+      direction: ltr !important; 
+    }
+    body[dir='rtl'] .slick-arrow.prev,
+    body[dir='rtl'] .slick-arrow.next {
+      right: auto !important;
+      left: auto !important;
+      position: static !important;
+    }
+
+    /* Forms and Alignments RTL/LTR Support */
+    body[dir='rtl'] form input, 
+    body[dir='rtl'] form textarea { 
+      text-align: right; 
+      direction: rtl; 
+    }
+    body[dir='ltr'] form input, 
+    body[dir='ltr'] form textarea { 
+      text-align: left; 
+      direction: ltr; 
+    }
+    body[dir='rtl'] .subscribe-content { text-align: right; }
+    body[dir='ltr'] .subscribe-content { text-align: left; }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background-color: #121212 !important;
+      color: #e0e0e0 !important;
+    }
+    body.dark-mode .bg-grey, body.dark-mode .bg-light, body.dark-mode .nav-overlay {
+      background-color: #1e1e1e !important;
+    }
+    body.dark-mode .bg-dark {
+      background-color: #0a0a0a !important;
+    }
+    body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, 
+    body.dark-mode h4, body.dark-mode h5, body.dark-mode h6,
+    body.dark-mode .section-title, body.dark-mode .post-title a {
+      color: #ffffff !important;
+    }
+    body.dark-mode p, body.dark-mode .text-lead p {
+      color: #cccccc !important;
+    }
+    body.dark-mode .tool-btn {
+      background: #333;
+      color: #fff;
+      border-color: #555;
+    }
+    body.dark-mode .tool-btn:hover {
+      background: #444;
+    }
+    body.dark-mode #footer, body.dark-mode #footer-bottom {
+      background-color: #050505 !important;
+      color: #aaaaaa !important;
+    }
+    body.dark-mode .iconbox i {
+      color: #fff;
+    }
+
+    /* RTL Adjustments for Navigation and Footer */
+    body[dir='rtl'] { text-align: right; }
+    body[dir='rtl'] .nav__list { direction: rtl; text-align: right; padding-right: 0; }
+    body[dir='rtl'] .nav__block-item { text-align: right; }
+    body[dir='rtl'] .list-unstyled { padding-right: 0; }
+    body[dir='rtl'] .menu-item i { margin-left: 0.5rem; margin-right: 0 !important; }
+    body[dir='rtl'] .section-header { text-align: right; }
+    body[dir='rtl'] .services-item { text-align: right; }
+    body[dir='rtl'] .footer-menu { text-align: right; }
+
+    /* Services Numbers Layout Fix (Prevents overlapping) */
+    .services-item {
+      position: relative;
+    }
+    .services-item .number {
+      position: relative !important;
+      display: block !important;
+      font-size: 2.5rem !important;
+      font-weight: bold !important;
+      margin-bottom: 15px !important;
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
+      bottom: auto !important;
+      opacity: 0.8 !important;
+    }
+  </style>
 </head>
 
-<body>
-
-	<div class="preloader"></div>
-
-	<div class="nav nav-overlay">
-		<div class="nav__content">
-			<div class="container">
-				<div class="row p-4 p-md-0 flex-column-reverse flex-md-row g-md-5 nav__block">
-					<div class="col-md-5">
-						<ul class="nav__list d-none d-md-block">
-							<li class="nav__list-item active-nav"><a href="index.html" class="hover-target">Home</a>
-							</li>
-							<li class="nav__list-item"><a href="index.html" class="hover-target">Onepage</a></li>
-							<li class="nav__list-item"><a href="index.html" class="hover-target">Styles</a></li>
-							<li class="nav__list-item"><a href="index.html" class="hover-target">Blog</a></li>
-							<li class="nav__list-item"><a href="index.html" class="hover-target">Single Post</a>
-							</li>
-							<li class="nav__list-item"><a href="index.html" class="hover-target">Contact us</a></li>
-						</ul>
-					</div>
-					<div class="col-md-4 text-white">
-						<h3 class="text-white fw-bold nav__block-item">Contact info</h3>
-						<p class="text-light nav__block-item">Officia nisi corrupti eaque cumque exercitationem labore
-							sint sapiente rem neque temporibus id ratione perspiciatis, tenetur est repellendus
-							aspernatur culpa repudiandae omnis.</p>
-						<ul class="list-unstyled text-light nav__block-item">
-							<li class="menu-item">
-								<i class="icon icon-location me-2"></i>2489 Locust Court, Los Angeles
-							</li>
-							<li class="menu-item">
-								<i class="icon icon-location2 me-2"></i>3927 Red Maple Drive, Los Angeles
-							</li>
-							<li class="menu-item">
-								<i class="icon icon-phone me-2"></i>+63 667 341 3463
-							</li>
-							<li class="menu-item">
-								<i class="icon icon-envelope-o me-2"></i><a href="#"
-									class="text-white">contact@example.com</a>
-							</li>
-						</ul>
-					</div>
-					<div class="col-md-3 text-white">
-						<h3 class="text-white fw-bold nav__block-item">Pages</h3>
-						<ul class="list-unstyled nav__block-item">
-							<li><a href="index.html" class="text-white">Onepage </a></li>
-							<li><a href="index.html" class="text-white">Styles </a></li>
-							<li><a href="index.html" class="text-white">Blog </a></li>
-							<li><a href="index.html" class="text-white">Single Post </a></li>
-							<li><a href="index.html" class="text-white">Contact us </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Masonry </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Portfolio Grid </a></li>
-							<li><a href="index.html" class="text-white">Single Portfolio </a></li>
-							<li><a href="index.html" class="text-white">About Us </a></li>
-							<li><a href="index.html" class="text-white">Our Team </a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
-
-	<div class="main-logo">
-		<a href="index.html">A.</a>
-	</div>
-
-	<div class="side-nav-bar">
-		<input id="menu-toggle" type="checkbox" />
-		<label class="menu-btn" for="menu-toggle">
-			<span></span>
-		</label>
-	</div>
-
-	<section id="intro" class="scrollspy-section">
-		<div class="main-slider">
-			<div class="slider-item jarallax" data-speed="0.2">
-				<img src="images/main-banner1.jpg" alt="banner" class="jarallax-img">
-				<div class="banner-content">
-					<h2 class="banner-title txt-fx">Modern Designs</h2>
-					<div class="btn-wrap">
-						<a href="#" class="btn-with-line">View Project</a>
-					</div>
-				</div><!--banner-content-->
-			</div><!--slider-item-->
-
-			<div class="slider-item jarallax" data-speed="0.2">
-				<img src="images/main-banner2.jpg" alt="banner" class="jarallax-img">
-				<div class="banner-content">
-					<h2 class="banner-title txt-fx">Clean & Minimal</h2>
-					<div class="btn-wrap">
-						<a href="#" class="btn-with-line">View Project</a>
-					</div>
-				</div><!--banner-content-->
-			</div><!--slider-item-->
-
-			<div class="slider-item jarallax" data-speed="0.2">
-				<img src="images/main-banner3.jpg" alt="banner" class="jarallax-img">
-				<div class="banner-content">
-					<h2 class="banner-title txt-fx">Personalize and Customize</h2>
-					<div class="btn-wrap">
-						<a href="#" class="btn-with-line">View Project</a>
-					</div>
-				</div><!--banner-content-->
-			</div><!--slider-item-->
-		</div><!--slider-->
-
-		<div class="button-container">
-			<button class="prev slick-arrow">
-				<i class="icon icon-chevron-thin-left"></i>
-			</button>
-			<button class="next slick-arrow">
-				<i class="icon icon-chevron-thin-right"></i>
-			</button>
-		</div>
-	</section>
-
-	<section id="about" class="scrollspy-section padding-xlarge">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-md-12">
-
-					<div class="section-header">
-						<div class="title">
-							<span>who are we</span>
-						</div>
-						<h2 class="section-title">About Us</h2>
-					</div>
-				</div>
-
-			</div>
-
-			<div class="row">
-
-				<div class="col-md-6">
-					<figure class="jarallax-keep-img">
-						<img src="images/singleimage.jpg" alt="about us" class="jarallax-img single-image">
-					</figure>
-				</div>
-				<div class="col-md-6 description text-lead">
-					<p><strong>Amet, consectetur adipiscing elit. Commodo viverra eu volutpat amet, leo ultrici non
-							senectus odio dolor. Id at urna non porttitor elentum. Viverra senectus lorem ipsum dolor
-							sit adui ultricies dolor varius nibh velit viverra euen.</strong></p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo viverra eu volutpat amet, leo
-						non senetus odio dolor. Id at urna non portitor etum. Vivera senectus elit dui ultricies dolor.
-						Varius nibh velit pellentesque sapien, sapien neque dignissim.</p>
-					<p>Commodo vivera eu volutpat amet, leo non senectus odio dolor. Id at urna non porttitor elementum.
-						Viverra senectus dui ultricies dolor.</p>
-
-					<div class="btn-wrap">
-						<a href="#" class="btn btn-accent btn-xlarge btn-rounded">View my portfolio</a>
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-	</section>
-
-	<section id="portfolio" class="scrollspy-section bg-dark padding-large">
-		<div class="container">
-
-			<div class="row">
-				<div class="col-md-12">
-
-					<div class="section-header">
-						<div class="title">
-							<span>Some of Our Works</span>
-						</div>
-						<h2 class="section-title light">Our Portfolio</h2>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-
-				<div id="filters" class="button-group d-flex flex-wrap gap-4 py-5" data-aos="fade-up">
-					<a href="#" class="btn btn-outline-light rounded-pill text-uppercase is-checked"
-						data-filter=".design">Design</a>
-					<a href="#" class="btn btn-outline-light rounded-pill text-uppercase"
-						data-filter=".interior">Interior</a>
-					<a href="#" class="btn btn-outline-light rounded-pill text-uppercase"
-						data-filter=".landscape">Landscape</a>
-					<a href="#" class="btn btn-outline-light rounded-pill text-uppercase"
-						data-filter=".construction">Construction</a>
-				</div>
-
-			</div>
-
-			<div class="grid p-0 clearfix row row-cols-2 row-cols-lg-3 row-cols-xl-3" data-aos="fade-up">
-				<div class="col mb-4 portfolio-item construction interior">
-					<a href="images/portfolio-large-2.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item 1."><img src="images/portfolio-thumb-1.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item construction construction">
-					<a href="images/portfolio-large-2.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item 2."><img src="images/portfolio-thumb-2.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item construction">
-					<a href="images/portfolio-large-2.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item 3."><img src="images/portfolio-thumb-11.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item construction">
-					<a href="images/portfolio-large-2.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item 4."><img src="images/portfolio-thumb-4.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item interior">
-					<a href="images/portfolio-large-2.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item 5."><img src="images/portfolio-thumb-5.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item design">
-					<a href="images/portfolio-large-1.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item 6."><img src="images/portfolio-thumb-6.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item design">
-					<a href="images/portfolio-large-1.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item 7."><img src="images/portfolio-thumb-7.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item design">
-					<a href="images/portfolio-large-1.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item 8."><img src="images/portfolio-thumb-8.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item design">
-					<a href="images/portfolio-large-2.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item 9."><img src="images/portfolio-thumb-9.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item design">
-					<a href="images/portfolio-large-2.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item1 0."><img src="images/portfolio-thumb-10.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item design">
-					<a href="images/portfolio-large-1.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item1 1."><img src="images/portfolio-thumb-11.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item construction">
-					<a href="images/portfolio-large-1.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item1 2."><img src="images/portfolio-thumb-2.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item interior">
-					<a href="images/portfolio-large-1.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item 1."><img src="images/portfolio-thumb-3.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item landscape">
-					<a href="images/portfolio-large-2.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item 2."><img src="images/portfolio-thumb-8.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item landscape">
-					<a href="images/portfolio-large-1.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item 3."><img src="images/portfolio-thumb-1.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item interior">
-					<a href="images/portfolio-large-1.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item 4."><img src="images/portfolio-thumb-4.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item interior">
-					<a href="images/portfolio-large-2.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item 5."><img src="images/portfolio-thumb-5.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item interior">
-					<a href="images/portfolio-large-1.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item 6."><img src="images/portfolio-thumb-6.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item landscape">
-					<a href="images/portfolio-large-1.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item 7."><img src="images/portfolio-thumb-7.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item landscape">
-					<a href="images/portfolio-large-2.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item 8."><img src="images/portfolio-thumb-8.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item landscape">
-					<a href="images/portfolio-large-2.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item1 0."><img src="images/portfolio-thumb-10.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item construction">
-					<a href="images/portfolio-large-1.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item1 1."><img src="images/portfolio-thumb-11.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-				<div class="col mb-4 portfolio-item landscape">
-					<a href="images/portfolio-large-2.jpg" class="image-link"
-						title="Sample Caption goes here for Portfolio Item1 2."><img src="images/portfolio-thumb-1.jpg"
-							class="img-fluid" alt="portfolio"></a>
-				</div>
-			</div>
-
-		</div>
-	</section>
-
-	<section id="services" class="scrollspy-section padding-large">
-		<div class="container">
-			<div class="row">
-				<div class="section-header col-12">
-					<div class="title">
-						<span>what we do</span>
-					</div>
-					<h2 class="section-title">Services</h2>
-				</div>
-
-			</div>
-
-			<div class="row">
-
-				<div class="col-md-4">
-					<div class="services-item">
-						<span class="number">01</span>
-						<h3>Architecture Portfolio</h3>
-						<p>Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis nulla blandit dui.
-						</p>
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="services-item">
-						<span class="number">02</span>
-						<h3>Planning Process</h3>
-						<p>Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis nulla blandit dui.
-						</p>
-					</div>
-
-				</div>
-
-				<div class="col-md-4">
-					<div class="services-item">
-						<span class="number">03</span>
-						<h3>Unique Design</h3>
-						<p>Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis nulla blandit dui.
-						</p>
-					</div>
-				</div>
-
-			</div>
-
-		</div>
-	</section>
-
-	<section id="subscribe" class="scrollspy-section padding-small">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<figure class="subscribe-image">
-						<img src="images/subscribe-image.png" alt="subscribe">
-					</figure>
-				</div>
-				<div class="col-md-6">
-					<div class="subscribe-content">
-						<h2 class="section-title">subscribe us</h2>
-						<p>Join our newsletter to stay updated with super discounts and amazing offers. 300+ have
-							already subscribed us.</p>
-						<form id="form">
-							<input type="text" name="email" placeholder="enter your email address">
-							<button class="btn btn-accent btn-rounded btn-full btn-xlarge">Subscribe</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section id="latest-blog" class="scrollspy-section bg-grey padding-large">
-		<div class="container">
-
-			<div class="row">
-
-				<div class="col">
-
-					<div class="section-header">
-						<div class="title">
-							<span>read our blog</span>
-						</div>
-						<h2 class="section-title">latest blog</h2>
-					</div>
-				</div>
-
-			</div>
-
-			<div class="row">
-				<div class="col-md-12">
-
-					<div class="post-grid">
-						<div class="row">
-
-							<div class="col-md-4">
-
-								<article class="post-item">
-
-									<figure>
-										<a href="#" class="image-hvr-effect">
-											<img src="images/postimg1.jpg" alt="post" class="post-image">
-										</a>
-									</figure>
-
-									<div class="post-content">
-										<div class="meta-date">Mar 30, 2021</div>
-										<h3 class="post-title"><a href="#">modern vibes bedrooms, todays trending
-												design</a></h3>
-										<p>Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis
-											nulla blandit dui.</p>
-									</div>
-								</article>
-
-							</div>
-
-							<div class="col-md-4">
-
-								<article class="post-item">
-									<figure>
-										<a href="#" class="image-hvr-effect">
-											<img src="images/postimg2.jpg" alt="post" class="post-image">
-										</a>
-									</figure>
-									<div class="post-content">
-										<div class="meta-date">Mar 29, 2021</div>
-										<h3 class="post-title"><a href="#">How to make minimalist living rooms
-												pop-out</a></h3>
-										<p>Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis
-											nulla blandit dui.</p>
-									</div>
-								</article>
-							</div>
-
-							<div class="col-md-4">
-								<article class="post-item">
-									<figure>
-										<a href="#" class="image-hvr-effect">
-											<img src="images/postimg3.jpg" alt="post" class="post-image">
-										</a>
-									</figure>
-									<div class="post-content">
-										<div class="meta-date">Mar 27, 2021</div>
-										<h3 class="post-title"><a href="#">how to make your resort that looks
-												outstanding</a></h3>
-										<p>Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis
-											nulla blandit dui.</p>
-									</div>
-								</article>
-							</div>
-
-						</div>
-					</div>
-
-				</div>
-
-
-
-			</div>
-
-			<div class="row">
-				<div class="col">
-
-					<div class="btn-wrap align-center">
-						<a href="#" class="btn btn-xlarge btn-accent btn-rounded">View all blog</a>
-					</div>
-
-				</div>
-			</div>
-
-		</div>
-	</section>
-
-	<section id="contact" class="scrollspy-section bg-dark padding-large">
-		<div class="container">
-
-			<div class="row">
-				<div class="col-md-6">
-
-					<div class="left-content">
-
-						<div class="section-header">
-							<div class="title">
-								<span>Get in touch</span>
-							</div>
-							<h2 class="section-title light">Contact us</h2>
-						</div>
-
-						<p>If you have any question about our process or company? Let us know how we can help you.</p>
-
-						<form id="form-contact" class="form-light" action="contact.php">
-							<p>
-								<input type="text" name="name" placeholder="Your Full Name*" required>
-							</p>
-							<p>
-								<input type="text" name="email" placeholder="Your Email Address" required>
-							</p>
-							<p>
-								<textarea name="message" placeholder="Your Message" required></textarea>
-							</p>
-							<p>
-								<label for="agree">
-									<input id="agree" name="agree" type="checkbox" required></input>
-									<span>I agree to privacy policy</span>
-								</label>
-							</p>
-							<button class="btn btn-accent btn-rounded btn-xlarge btn-full">Submit</button>
-						</form>
-
-
-					</div>
-
-				</div><!--left-content-->
-
-				<div class="col-md-6">
-					<div class="right-content">
-
-						<div class="iconbox">
-							<i class="icon icon-location"></i>
-							<div class="detail">
-								<strong>Address 1:</strong>
-								<p>3927 Red Maple Drive, Los Angeles</p>
-							</div>
-						</div>
-						<div class="iconbox">
-							<i class="icon icon-location2"></i>
-							<div class="detail">
-								<strong>Address 2:</strong>
-								<p>2489 Locust Court, Los Angeles</p>
-							</div>
-						</div>
-						<div class="iconbox">
-							<i class="icon icon-phone"></i>
-							<div class="detail">
-								<strong>Phone:</strong>
-								<p>+63 667 341 3463</p>
-							</div>
-						</div>
-						<div class="iconbox">
-							<i class="icon icon-mail3"></i>
-							<div class="detail">
-								<strong>Email:</strong>
-								<p><a href="#">contact@example.com</a></p>
-							</div>
-						</div>
-
-					</div>
-				</div><!--right-content-->
-
-			</div>
-
-		</div>
-	</section>
-
-	<section id="testimonial" class="padding-large">
-		<div class="container">
-
-			<div class="row">
-
-				<div class="col-md-6">
-
-					<figure class="jarallax-keep-img testimonial-image" data-speed="0.5">
-						<img src="images/review-bg.jpg" alt="review" class="jarallax-img">
-					</figure>
-
-				</div>
-
-				<div class="col-md-6">
-
-					<div class="testimonial-block">
-						<div class="section-header">
-							<div class="title">
-								<span>What clients says</span>
-							</div>
-							<h2 class="section-title">Testimonials</h2>
-						</div>
-						<div class="testimonials-inner">
-							<q>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat venenatis tempor,
-								turpis dolor. Aliquam faucibus velit, volutpat vulputate risus urna enim.</q>
-							<div class="testimonial-author">
-								<div class="author-detail">
-									<div class="name">Lucifer</div>
-									<div class="author-title">CEO, unity real state</div>
-								</div>
-							</div>
-						</div>
-					</div><!--reviews-content-->
-
-				</div>
-			</div><!--grid-->
-
-		</div>
-	</section>
-
-	<footer id="footer">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-md-3">
-
-					<div class="footer-menu menu-item-01">
-						<img src="images/logo.png" alt="logo" class="footer-logo">
-						<p>Tristique lacus ullamcorper massa posuere nisl molestie. Nullam motes, tortor masa. Nisl
-							tellus etiam.</p>
-						<div class="social-links">
-							<ul>
-								<li>
-									<a href="#"><i class="icon icon-facebook"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="icon icon-twitter"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="icon icon-youtube-play"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="icon icon-behance-square"></i></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="col-md-2">
-
-					<div class="footer-menu menu-item-02">
-						<h5>quick links</h5>
-						<ul class="menu-list">
-							<li class="menu-item">
-								<a href="#">home</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">about us </a>
-							</li>
-							<li class="menu-item">
-								<a href="#">services</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">portfolios</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">blogs</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">contact us</a>
-							</li>
-						</ul>
-					</div>
-
-				</div>
-
-				<div class="col-md-4">
-
-					<div class="footer-menu menu-item-03">
-						<h5>contact info</h5>
-						<ul class="menu-list">
-							<li class="menu-item">
-								<i class="icon icon-location"></i>2489 Locust Court, Los Angeles
-							</li>
-							<li class="menu-item">
-								<i class="icon icon-location2"></i>3927 Red Maple Drive, Los Angeles
-							</li>
-							<li class="menu-item">
-								<i class="icon icon-phone"></i>+63 667 341 3463
-							</li>
-							<li class="menu-item">
-								<i class="icon icon-envelope-o"></i><a href="#" class="mail-id">contact@example.com</a>
-							</li>
-						</ul>
-					</div>
-
-				</div>
-
-				<div class="col-md-3">
-
-					<div class="footer-menu menu-item-04">
-						<h5>gallery</h5>
-						<div class="gallery">
-							<a href="images/spacejoy.jpg" data-lightbox-gallery="gallery1"
-								title="Calm Before The Storm (One Shoe Photography Ltd.)" class="image-link"><img
-									src="images/tab1.jpg" alt="house" class="gallery-image"></a>
-							<a href="images/interior.jpg" data-lightbox-gallery="gallery1"
-								title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))" class="image-link"><img
-									src="images/tab2.jpg" alt="house" class="gallery-image"></a>
-							<a href="images/interior.jpg" data-lightbox-gallery="gallery1"
-								title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))" class="image-link"><img
-									src="images/tab3.jpg" alt="house" class="gallery-image"></a>
-							<a href="images/interior.jpg" data-lightbox-gallery="gallery1"
-								title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))" class="image-link"><img
-									src="images/postimg1.jpg" alt="house" class="gallery-image"></a>
-							<a href="images/interior.jpg" data-lightbox-gallery="gallery1"
-								title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))" class="image-link"><img
-									src="images/postimg2.jpg" alt="house" class="gallery-image"></a>
-							<a href="images/interior.jpg" data-lightbox-gallery="gallery1"
-								title="Grasmere Lake (Phil 'the link' Whittaker (gizto29))" class="image-link"><img
-									src="images/postimg3.jpg" alt="house" class="gallery-image"></a>
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-		</div>
-	</footer>
-
-	<div id="footer-bottom">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="copyright">
-						<p>© 2022 Archi. All rights reserved.</p>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="copyright text-right">
-						<p>HTML Template by <a href="https://www.templatesjungle.com/"
-								target="_blank">TemplatesJungle</a> distributed By <a href="https://themewagon.com" target="blank">ThemeWagon</a></p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<script src="js/jquery-1.11.0.min.js"></script>
-	<script src="js/ui-easing.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-		crossorigin="anonymous"></script>
-	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-	<script src="js/plugins.js"></script>
-	<script src="js/script.js"></script>
-
+<body dir="rtl">
+
+  <div class="tools-container">
+    <button id="theme-toggle" class="tool-btn" onclick="toggleTheme()">🌙 Dark</button>
+    <button id="lang-toggle" class="tool-btn" onclick="toggleLanguage()">EN</button>
+  </div>
+
+  <div class="preloader"></div>
+
+  <div class="nav nav-overlay">
+    <div class="nav__content">
+      <div class="container">
+        <div class="row p-4 p-md-0 flex-column-reverse flex-md-row g-md-5 nav__block">
+          <div class="col-md-5">
+            <ul class="nav__list d-none d-md-block">
+              <li class="nav__list-item active-nav"><a href="index.html" class="hover-target" data-key="nav_home">خانه</a></li>
+              <li class="nav__list-item"><a href="index.html" class="hover-target" data-key="nav_onepage">تک‌صفحه</a></li>
+              <li class="nav__list-item"><a href="index.html" class="hover-target" data-key="nav_styles">استایل‌ها</a></li>
+              <li class="nav__list-item"><a href="index.html" class="hover-target" data-key="nav_blog">بلاگ</a></li>
+              <li class="nav__list-item"><a href="single-post.html" class="hover-target" data-key="nav_single">پست تکی</a></li>
+              <li class="nav__list-item"><a href="contact.html" class="hover-target" data-key="nav_contact">تماس با ما</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 text-white">
+            <h3 class="text-white fw-bold nav__block-item" data-key="contact_title">اطلاعات تماس</h3>
+            <p class="text-light nav__block-item" data-key="contact_desc">ما در شرکت مهندسین مشاور باغ شهر پارسیان همواره آماده پاسخگویی به سوالات شما و ارائه بهترین مشاوره مهندسی هستیم.</p>
+            <ul class="list-unstyled text-light nav__block-item">
+              <li class="menu-item">
+                <i class="icon icon-location me-2"></i><span data-key="address">اصفهان، خیابان خورشید، بن‌بست فروغی، پلاک ۶۲، طبقه اول</span>
+              </li>
+              <li class="menu-item">
+                <i class="icon icon-phone me-2"></i><span dir="ltr">+98 991 981 1363</span>
+              </li>
+              <li class="menu-item">
+                <i class="icon icon-envelope-o me-2"></i><a href="mailto:baghshahrco.eng@gmail.com" class="text-white">baghshahrco.eng@gmail.com</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 text-white">
+            <h3 class="text-white fw-bold nav__block-item" data-key="pages_title">صفحات</h3>
+            <ul class="list-unstyled nav__block-item">
+              <li><a href="index.html" class="text-white" data-key="nav_about">درباره ما</a></li>
+              <li><a href="index.html" class="text-white" data-key="nav_team">تیم ما</a></li>
+              <li><a href="index.html" class="text-white" data-key="nav_portfolio">نمونه کارها</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Removed 'B.' and prepared space for logo insertion -->
+<div class="main-logo">
+  <a href="index.html">
+    <img src="images/my-logo.jpg"
+         alt="Company Logo"
+         class="custom-logo"
+         style="display:block;width:100%;height:100%;object-fit:contain;">
+  </a>
+</div>
+
+  <div class="side-nav-bar">
+    <input id="menu-toggle" type="checkbox" />
+    <label class="menu-btn" for="menu-toggle">
+      <span></span>
+    </label>
+  </div>
+
+  <section id="intro" class="scrollspy-section">
+    <div class="main-slider">
+      <div class="slider-item jarallax" data-speed="0.2">
+        <img src="images/main-banner1.jpg" alt="banner" class="jarallax-img">
+        <div class="banner-content">
+          <h2 class="banner-title txt-fx" data-key="banner1_title">توسعه پایدار شهری</h2>
+          <div class="btn-wrap">
+            <a href="#" class="btn-with-line" data-key="banner_btn">مشاهده پروژه‌ها</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-item jarallax" data-speed="0.2">
+        <img src="images/main-banner2.jpg" alt="banner" class="jarallax-img">
+        <div class="banner-content">
+          <h2 class="banner-title txt-fx" data-key="banner2_title">معماری و عمران</h2>
+          <div class="btn-wrap">
+            <a href="#" class="btn-with-line" data-key="banner_btn">مشاهده پروژه‌ها</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-item jarallax" data-speed="0.2">
+        <img src="images/main-banner3.jpg" alt="banner" class="jarallax-img">
+        <div class="banner-content">
+          <h2 class="banner-title txt-fx" data-key="banner3_title">نوآوری در زیرساخت</h2>
+          <div class="btn-wrap">
+            <a href="#" class="btn-with-line" data-key="banner_btn">مشاهده پروژه‌ها</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button class="prev slick-arrow"><i class="icon icon-chevron-thin-left"></i></button>
+      <button class="next slick-arrow"><i class="icon icon-chevron-thin-right"></i></button>
+    </div>
+  </section>
+
+  <section id="about" class="scrollspy-section padding-xlarge">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-header">
+            <div class="title">
+              <span data-key="about_subtitle">ما کی هستیم</span>
+            </div>
+            <h2 class="section-title" data-key="about_title">درباره ما</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <figure class="jarallax-keep-img">
+            <img src="images/singleimage.jpg" alt="about us" class="jarallax-img single-image">
+          </figure>
+        </div>
+        <div class="col-md-6 description text-lead">
+          <p><strong data-key="about_text1">شرکت مهندسین مشاور باغ شهر پارسیان (سهامی خاص) با رویکردی جامع و تخصصی در حوزه‌های عمران، شهرسازی، حمل‌ونقل، فضاهای سبز و محیط‌زیست، طیف کاملی از خدمات مهندسی شامل مطالعات، طراحی، برنامه‌ریزی، نظارت و اجرای پروژه‌ها را در مقیاس شهری و منطقه‌ای ارائه می‌دهد.</strong></p>
+          <p data-key="about_text2">حوزه فعالیت ما اجرای انواع پروژه‌های آموزشی، ورزشی، درمانی، فرهنگی و مذهبی را در بر می‌گیرد. علاوه بر آن، در زمینه زیرساخت‌های حمل‌ونقل جاده‌ای، ریلی و هوایی، ساماندهی بافت‌های فرسوده، زیباسازی شهری، طراحی و کنترل سازه‌ها، خدمات آزمایشگاهی و نقشه‌برداری با بالاترین استانداردهای مهندسی فعالیت داریم.</p>
+          <p data-key="about_text3">تمام مراحل کار، از امکان‌سنجی تا اجرا، با اتکا بر دانش روز، بهره‌گیری از فناوری‌های نوین و رعایت اصول توسعه پایدار انجام می‌شود. هدف ما ارتقای کیفیت زندگی، بهبود چشم‌انداز شهری و ارائه راهکارهایی خلاقانه و علمی برای آینده‌ای پایدار است.</p>
+
+          <div class="btn-wrap">
+            <a href="#" class="btn btn-accent btn-xlarge btn-rounded" data-key="about_btn">مشاهده رزومه شرکت</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="scrollspy-section bg-dark padding-large">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-header">
+            <div class="title">
+              <span data-key="portfolio_subtitle">برخی از کارهای ما</span>
+            </div>
+            <h2 class="section-title light" data-key="portfolio_title">نمونه کارهای ما</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div id="filters" class="button-group d-flex flex-wrap gap-4 py-5" data-aos="fade-up">
+          <a href="javascript:void(0);" class="btn btn-outline-light rounded-pill text-uppercase is-checked" data-filter="*" data-key="filter_all">همه</a>
+          <a href="javascript:void(0);" class="btn btn-outline-light rounded-pill text-uppercase" data-filter=".residential" data-key="filter_residential">مسکونی</a>
+          <a href="javascript:void(0);" class="btn btn-outline-light rounded-pill text-uppercase" data-filter=".commercial" data-key="filter_commercial">تجاری</a>
+          <a href="javascript:void(0);" class="btn btn-outline-light rounded-pill text-uppercase" data-filter=".greenspace" data-key="filter_greenspace">فضای سبز</a>
+          <a href="javascript:void(0);" class="btn btn-outline-light rounded-pill text-uppercase" data-filter=".infrastructure" data-key="filter_infrastructure">زیرساخت</a>
+        </div>
+      </div>
+
+      <div class="grid p-0 clearfix row row-cols-2 row-cols-lg-3 row-cols-xl-3" data-aos="fade-up">
+        <div class="col mb-4 portfolio-item residential greenspace">
+          <a href="images/portfolio-large-2.jpg" class="image-link"><img src="images/portfolio-thumb-1.jpg" class="img-fluid" alt="portfolio"></a>
+        </div>
+        <div class="col mb-4 portfolio-item commercial">
+          <a href="images/portfolio-large-2.jpg" class="image-link"><img src="images/portfolio-thumb-2.jpg" class="img-fluid" alt="portfolio"></a>
+        </div>
+        <div class="col mb-4 portfolio-item greenspace">
+          <a href="images/portfolio-large-2.jpg" class="image-link"><img src="images/portfolio-thumb-11.jpg" class="img-fluid" alt="portfolio"></a>
+        </div>
+        <div class="col mb-4 portfolio-item infrastructure">
+          <a href="images/portfolio-large-2.jpg" class="image-link"><img src="images/portfolio-thumb-4.jpg" class="img-fluid" alt="portfolio"></a>
+        </div>
+        <div class="col mb-4 portfolio-item residential commercial">
+          <a href="images/portfolio-large-2.jpg" class="image-link"><img src="images/portfolio-thumb-5.jpg" class="img-fluid" alt="portfolio"></a>
+        </div>
+        <div class="col mb-4 portfolio-item infrastructure greenspace">
+          <a href="images/portfolio-large-1.jpg" class="image-link"><img src="images/portfolio-thumb-6.jpg" class="img-fluid" alt="portfolio"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="scrollspy-section padding-large">
+    <div class="container">
+      <div class="row">
+        <div class="section-header col-12">
+          <div class="title">
+            <span data-key="services_subtitle">حوزه‌های تخصصی</span>
+          </div>
+          <h2 class="section-title" data-key="services_title">خدمات ما</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="services-item">
+            <span class="number">01</span>
+            <h3 data-key="service1_title">عمران، معماری و شهرسازی</h3>
+            <p data-key="service1_desc">طراحی معماری، نظارت و اجرای پروژه‌های مسکونی، تجاری، درمانی، فرهنگی و تهیه طرح‌های جامع و تفصیلی توسعه شهری.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="services-item">
+            <span class="number">02</span>
+            <h3 data-key="service2_title">زیرساخت‌های حمل‌ونقل</h3>
+            <p data-key="service2_desc">مطالعات، طراحی و نظارت بر اجرای پروژه‌های راهسازی، آزادراه‌ها، خطوط ریلی، فرودگاه‌ها و تقاطع‌های شهری و برون‌شهری.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="services-item">
+            <span class="number">03</span>
+            <h3 data-key="service3_title">محیط‌زیست و خدمات ویژه</h3>
+            <p data-key="service3_desc">ارزیابی زیست‌محیطی، طراحی فضای سبز، خدمات نقشه‌برداری (GIS)، ژئوتکنیک، مقاوم‌سازی لرزه‌ای ابنیه و ساماندهی بافت‌های فرسوده.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="subscribe" class="scrollspy-section padding-small">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <figure class="subscribe-image">
+            <img src="images/subscribe-image.png" alt="subscribe">
+          </figure>
+        </div>
+        <div class="col-md-6">
+          <div class="subscribe-content">
+            <h2 class="section-title" data-key="subscribe_title">مارا دنبال کنید</h2>
+            <p data-key="subscribe_desc">برای اطلاع از جدیدترین پروژه‌ها و دستاوردهای مهندسی به خبرنامه ما بپیوندید.</p>
+            <form id="form">
+              <input type="text" name="email" placeholder="ایمیل خود را وارد کنید" data-placeholder-key="subscribe_input">
+              <button class="btn btn-accent btn-rounded btn-full btn-xlarge" data-key="subscribe_btn">عضویت</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="scrollspy-section bg-dark padding-large">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="left-content">
+            <div class="section-header">
+              <div class="title">
+                <span data-key="contact_form_subtitle">در تماس باشید</span>
+              </div>
+              <h2 class="section-title light" data-key="contact_form_title">تماس با ما</h2>
+            </div>
+            <p data-key="contact_form_desc">آیا در خصوص اجرای پروژه‌های مهندسی و مشاوره سوالی دارید؟ به ما پیام دهید.</p>
+            <form id="form-contact" class="form-light" action="contact.php">
+              <p>
+                <input type="text" name="name" placeholder="نام کامل شما*" data-placeholder-key="form_name" required>
+              </p>
+              <p>
+                <input type="text" name="email" placeholder="آدرس ایمیل*" data-placeholder-key="form_email" required>
+              </p>
+              <p>
+                <textarea name="message" placeholder="پیام شما" data-placeholder-key="form_msg" required></textarea>
+              </p>
+              <p>
+                <label for="agree">
+                  <input id="agree" name="agree" type="checkbox" required></input>
+                  <span data-key="form_agree">با قوانین و حریم خصوصی موافقم</span>
+                </label>
+              </p>
+              <button class="btn btn-accent btn-rounded btn-xlarge btn-full" data-key="form_submit">ارسال</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="right-content">
+            <div class="iconbox">
+              <i class="icon icon-location"></i>
+              <div class="detail">
+                <strong data-key="contact_address_lbl">آدرس:</strong>
+                <p data-key="address">اصفهان، خیابان خورشید، بن‌بست فروغی، پلاک ۶۲، طبقه اول</p>
+              </div>
+            </div>
+            <div class="iconbox">
+              <i class="icon icon-phone"></i>
+              <div class="detail">
+                <strong data-key="contact_phone_lbl">تلفن:</strong>
+                <p dir="ltr">+98 991 981 1363</p>
+              </div>
+            </div>
+            <div class="iconbox">
+              <i class="icon icon-mail3"></i>
+              <div class="detail">
+                <strong data-key="contact_email_lbl">ایمیل:</strong>
+                <p><a href="mailto:baghshahrco.eng@gmail.com">baghshahrco.eng@gmail.com</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <footer id="footer">
+    <style>
+      body[dir='rtl'] .lang-en { display: none !important; }
+      body[dir='ltr'] .lang-fa { display: none !important; }
+    </style>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="footer-menu menu-item-01">
+            <div style="min-height: 40px; margin-bottom: 15px;"><img src="" alt="" class="custom-footer-logo" style="max-height: 100%; max-width: 100%; display: none;"></div>
+            <p data-key="footer_desc">مهندسین مشاور باغ شهر پارسیان، پیشرو در ارائه خدمات نوین و تخصصی مهندسی عمران، شهرسازی و معماری.</p>
+            <div class="social-links">
+              <ul>
+                <li><a href="#"><i class="icon icon-facebook"></i></a></li>
+                <li><a href="#"><i class="icon icon-twitter"></i></a></li>
+                <li><a href="#"><i class="icon icon-youtube-play"></i></a></li>
+                <li><a href="#"><i class="icon icon-behance-square"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="footer-menu menu-item-02">
+            <h5>
+              <span class="lang-fa">لینک‌های سریع</span>
+              <span class="lang-en">Quick Links</span>
+            </h5>
+            <ul class="menu-list">
+              <li class="menu-item"><a href="#" data-key="nav_home">خانه</a></li>
+              <li class="menu-item"><a href="#" data-key="nav_about">درباره ما</a></li>
+              <li class="menu-item"><a href="#" data-key="services_title">خدمات ما</a></li>
+              <li class="menu-item"><a href="#" data-key="nav_portfolio">نمونه کارها</a></li>
+              <li class="menu-item"><a href="#" data-key="nav_contact">تماس با ما</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="footer-menu menu-item-03">
+            <h5 data-key="contact_title">اطلاعات تماس</h5>
+            <ul class="menu-list">
+              <li class="menu-item">
+                <i class="icon icon-location"></i><span data-key="address">اصفهان، خیابان خورشید، بن‌بست فروغی، پلاک ۶۲، طبقه اول</span>
+              </li>
+              <li class="menu-item">
+                <i class="icon icon-phone"></i><span dir="ltr">+98 991 981 1363</span>
+              </li>
+              <li class="menu-item">
+                <i class="icon icon-envelope-o"></i><a href="mailto:baghshahrco.eng@gmail.com" class="mail-id">baghshahrco.eng@gmail.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="footer-menu menu-item-04">
+            <h5>
+              <span class="lang-fa">گالری پروژه‌ها</span>
+              <span class="lang-en">Project Gallery</span>
+            </h5>
+            <div class="gallery">
+              <a href="images/spacejoy.jpg" class="image-link"><img src="images/tab1.jpg" alt="project" class="gallery-image"></a>
+              <a href="images/interior.jpg" class="image-link"><img src="images/tab2.jpg" alt="project" class="gallery-image"></a>
+              <a href="images/interior.jpg" class="image-link"><img src="images/tab3.jpg" alt="project" class="gallery-image"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="footer-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="copyright">
+            <p data-key="copyright">© 2026 مهندسین مشاور باغ شهر پارسیان. تمامی حقوق محفوظ است.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="copyright text-md-end text-right">
+             <p>Designed for <span style="font-weight: bold; color: #fff;"></span> Baghshahr Parsian</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/ui-easing.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+    const dictionary = {
+      nav_home: { fa: "خانه", en: "Home" },
+      nav_onepage: { fa: "تک‌صفحه", en: "Onepage" },
+      nav_styles: { fa: "استایل‌ها", en: "Styles" },
+      nav_blog: { fa: "بلاگ", en: "Blog" },
+      nav_single: { fa: "پست تکی", en: "Single Post" },
+      nav_contact: { fa: "تماس با ما", en: "Contact Us" },
+      contact_title: { fa: "اطلاعات تماس", en: "Contact Info" },
+      contact_desc: { fa: "ما در شرکت مهندسین مشاور باغ شهر پارسیان همواره آماده پاسخگویی به سوالات شما و ارائه بهترین مشاوره مهندسی هستیم.", en: "At Baghshahr Parsian Consulting Engineers, we are always ready to answer your questions and provide the best engineering advice." },
+      address: { fa: "اصفهان، خیابان خورشید، بن‌بست فروغی، پلاک ۶۲، طبقه اول", en: "1st Floor, No. 62, Foroughi Dead End, Khorshid St., Isfahan, Iran" },
+      pages_title: { fa: "صفحات", en: "Pages" },
+      nav_about: { fa: "درباره ما", en: "About Us" },
+      nav_team: { fa: "تیم ما", en: "Our Team" },
+      nav_portfolio: { fa: "نمونه کارها", en: "Portfolio" },
+      banner1_title: { fa: "توسعه پایدار شهری", en: "Sustainable Urban Development" },
+      banner2_title: { fa: "معماری و عمران", en: "Architecture & Civil Engineering" },
+      banner3_title: { fa: "نوآوری در زیرساخت", en: "Innovation in Infrastructure" },
+      banner_btn: { fa: "مشاهده پروژه‌ها", en: "View Projects" },
+      about_subtitle: { fa: "ما کی هستیم", en: "Who are we" },
+      about_title: { fa: "درباره ما", en: "About Us" },
+      about_text1: { fa: "شرکت مهندسین مشاور باغ شهر پارسیان (سهامی خاص) با رویکردی جامع و تخصصی در حوزه‌های عمران، شهرسازی، حمل‌ونقل، فضاهای سبز و محیط‌زیست، طیف کاملی از خدمات مهندسی شامل مطالعات، طراحی، برنامه‌ریزی، نظارت و اجرای پروژه‌ها را در مقیاس شهری و منطقه‌ای ارائه می‌دهد.", en: "Baghshahr Parsian Consulting Engineers (Private Joint Stock) provides a full range of engineering services, including studies, design, planning, supervision, and execution of urban and regional projects, with a comprehensive and specialized approach in civil, urban planning, transportation, green spaces, and environmental sectors." },
+      about_text2: { fa: "حوزه فعالیت ما اجرای انواع پروژه‌های آموزشی، ورزشی، درمانی، فرهنگی و مذهبی را در بر می‌گیرد. علاوه بر آن، در زمینه زیرساخت‌های حمل‌ونقل جاده‌ای، ریلی و هوایی، ساماندهی بافت‌های فرسوده، زیباسازی شهری، طراحی و کنترل سازه‌ها، خدمات آزمایشگاهی و نقشه‌برداری با بالاترین استانداردهای مهندسی فعالیت داریم.", en: "Our activities encompass the execution of educational, sports, healthcare, cultural, and religious projects. Additionally, we are highly active in road, rail, and air transportation infrastructure, urban renewal of distressed areas, urban beautification, structural design and control, laboratory services, and advanced surveying." }, 
+      about_text3: { fa: "تمام مراحل کار، از امکان‌سنجی تا اجرا، با اتکا بر دانش روز، بهره‌گیری از فناوری‌های نوین و رعایت اصول توسعه پایدار انجام می‌شود. هدف ما ارتقای کیفیت زندگی، بهبود چشم‌انداز شهری و ارائه راهکارهایی خلاقانه و علمی برای آینده‌ای پایدار است.", en: "All stages of work, from feasibility to execution, are carried out relying on up-to-date knowledge, modern technologies, and sustainable development principles. Our goal is to enhance the quality of life, improve urban landscapes, and provide creative, scientific solutions for a sustainable future." },
+      about_btn: { fa: "مشاهده رزومه شرکت", en: "View Company Resume" },
+      portfolio_subtitle: { fa: "برخی از کارهای ما", en: "Some of Our Works" },
+      portfolio_title: { fa: "نمونه کارهای ما", en: "Our Portfolio" },
+      filter_all: { fa: "همه", en: "All" },
+      filter_residential: { fa: "مسکونی", en: "Residential" },
+      filter_commercial: { fa: "تجاری", en: "Commercial" },
+      filter_greenspace: { fa: "فضای سبز", en: "Green Space" },
+      filter_infrastructure: { fa: "زیرساخت", en: "Infrastructure" },
+      services_subtitle: { fa: "حوزه‌های تخصصی", en: "Specialized Areas" },
+      services_title: { fa: "خدمات ما", en: "Our Services" },
+      service1_title: { fa: "عمران، معماری و شهرسازی", en: "Civil, Architecture & Urban Planning" },
+      service1_desc: { fa: "طراحی معماری، نظارت و اجرای پروژه‌های مسکونی، تجاری، درمانی، فرهنگی و تهیه طرح‌های جامع و تفصیلی توسعه شهری.", en: "Architectural design, supervision, and execution of residential, commercial, healthcare, and cultural projects, along with comprehensive urban development plans." },
+      service2_title: { fa: "زیرساخت‌های حمل‌ونقل", en: "Transportation Infrastructure" },
+      service2_desc: { fa: "مطالعات، طراحی و نظارت بر اجرای پروژه‌های راهسازی، آزادراه‌ها، خطوط ریلی، فرودگاه‌ها و تقاطع‌های شهری و برون‌شهری.", en: "Studies, design, and supervision of road construction, freeways, railways, airports, and urban/intercity intersections." },
+      service3_title: { fa: "محیط‌زیست و خدمات ویژه", en: "Environment & Special Services" },
+      service3_desc: { fa: "ارزیابی زیست‌محیطی، طراحی فضای سبز، خدمات نقشه‌برداری (GIS)، ژئوتکنیک، مقاوم‌سازی لرزه‌ای ابنیه و ساماندهی بافت‌های فرسوده.", en: "Environmental assessment, green space design, surveying (GIS), geotechnics, seismic retrofitting, and urban renewal of distressed areas." },
+      subscribe_title: { fa: "مارا دنبال کنید", en: "Subscribe Us" },
+      subscribe_desc: { fa: "برای اطلاع از جدیدترین پروژه‌ها و دستاوردهای مهندسی به خبرنامه ما بپیوندید.", en: "Join our newsletter to stay updated with the latest projects and engineering achievements." },
+      subscribe_input: { fa: "ایمیل خود را وارد کنید", en: "Enter your email address" },
+      subscribe_btn: { fa: "عضویت", en: "Subscribe" },
+      contact_form_subtitle: { fa: "در تماس باشید", en: "Get in touch" },
+      contact_form_title: { fa: "تماس با ما", en: "Contact Us" },
+      contact_form_desc: { fa: "آیا در خصوص اجرای پروژه‌های مهندسی و مشاوره سوالی دارید؟ به ما پیام دهید.", en: "Have any questions about executing engineering projects and consulting? Send us a message." },
+      form_name: { fa: "نام کامل شما*", en: "Your Full Name*" },
+      form_email: { fa: "آدرس ایمیل*", en: "Your Email Address*" },
+      form_msg: { fa: "پیام شما", en: "Your Message" },
+      form_agree: { fa: "با قوانین و حریم خصوصی موافقم", en: "I agree to privacy policy" },
+      form_submit: { fa: "ارسال", en: "Submit" },
+      contact_address_lbl: { fa: "آدرس:", en: "Address:" },
+      contact_phone_lbl: { fa: "تلفن:", en: "Phone:" },
+      contact_email_lbl: { fa: "ایمیل:", en: "Email:" },
+      footer_desc: { fa: "مهندسین مشاور باغ شهر پارسیان، پیشرو در ارائه خدمات نوین و تخصصی مهندسی عمران، شهرسازی و معماری.", en: "Baghshahr Parsian Consulting Engineers, a leader in providing modern and specialized services in civil engineering, urban planning, and architecture." },
+      copyright: { fa: "© 2026 مهندسین مشاور باغ شهر پارسیان. تمامی حقوق محفوظ است.", en: "© 2026 Baghshahr Parsian Consulting Engineers. All rights reserved." }
+    };
+
+let currentLang = 'en'; 
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'fa' ? 'en' : 'fa';
+      document.documentElement.setAttribute('lang', currentLang);
+      document.documentElement.setAttribute('lang', currentLang);
+      document.getElementById('lang-toggle').innerText = currentLang === 'fa' ? 'EN' : 'FA';
+      
+      // Update all elements with data-key
+      document.querySelectorAll('[data-key]').forEach(elem => {
+        const key = elem.getAttribute('data-key');
+        if (dictionary[key] && dictionary[key][currentLang]) {
+          elem.innerText = dictionary[key][currentLang];
+        }
+      });
+
+      // Update placeholders
+      document.querySelectorAll('[data-placeholder-key]').forEach(elem => {
+        const key = elem.getAttribute('data-placeholder-key');
+        if(dictionary[key] && dictionary[key][currentLang]) {
+          elem.setAttribute('placeholder', dictionary[key][currentLang]);
+        }
+      });
+
+      // نمایش تصاویر اسلایدر در هر دو زبان
+            document.querySelectorAll('.slider-item .jarallax-img').forEach(function(img) {
+            img.style.display = 'block';
+            });
+
+            document.querySelectorAll('.slider-item').forEach(function(item) {
+                item.style.display = 'block';
+            });
+            // Reinitialize slider after language change
+      if ($('.main-slider').hasClass('slick-initialized')) {
+          $('.main-slider').slick('unslick');
+      }
+
+      $('.main-slider').slick({
+          autoplay: false,
+          autoplaySpeed: 4000,
+          fade: true,
+          prevArrow: $('.prev'),
+          nextArrow: $('.next'),
+});
+    }
+
+    function toggleTheme() {
+      const isDark = document.body.classList.toggle('dark-mode');
+      document.getElementById('theme-toggle').innerText = isDark ? '☀️ Light' : '🌙 Dark';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // اعمال وضعیت اولیه زبان انگلیسی
+      document.body.setAttribute('dir', 'ltr');
+      document.documentElement.setAttribute('lang', 'en');
+      const langToggle = document.getElementById('lang-toggle');
+      if (langToggle) langToggle.innerText = 'FA';
+      
+      document.querySelectorAll('[data-key]').forEach(elem => {
+        const key = elem.getAttribute('data-key');
+        if (dictionary[key] && dictionary[key]['en']) {
+          elem.innerText = dictionary[key]['en'];
+        }
+      });
+
+      document.querySelectorAll('[data-placeholder-key]').forEach(elem => {
+        const key = elem.getAttribute('data-placeholder-key');
+        if (dictionary[key] && dictionary[key]['en']) {
+          elem.setAttribute('placeholder', dictionary[key]['en']);
+        }
+      });
+
+      // اعمال وضعیت اولیه تم دارک
+      document.body.classList.add('dark-mode');
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) themeToggle.innerText = '☀️ Light';
+    });
+  
+  </script>
 </body>
-
 </html>
